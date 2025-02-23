@@ -77,7 +77,3 @@ vercel
 Feel free to contribute by submitting **issues** and **pull requests**!
 
 ---
-
-## 📜 License
-This project is **open-source** under the MIT License.
-
