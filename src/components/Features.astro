@@ -1,0 +1,41 @@
+
+---
+const features = [
+  {
+    title: "Smart Journal Entries",
+    description: "Automatically organize your travel memories with location tagging and date tracking",
+    icon: "📝"
+  },
+  {
+    title: "Photo Collections",
+    description: "Create beautiful galleries for each destination with smart photo organization",
+    icon: "📸"
+  },
+  {
+    title: "Travel Timeline",
+    description: "Visualize your journey with an interactive timeline of your adventures",
+    icon: "🗺"
+  },
+  {
+    title: "Offline Access",
+    description: "Access your memories anytime, anywhere - even without internet connection",
+    icon: "📱"
+  }
+];
+---
+
+<section class="features section relative overflow-hidden bg-slate-50">
+  <div class="container relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 font-outfit" data-aos="fade-up">Features You'll Love</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((feature, index) => (
+        <div class="feature-card group backdrop-blur-sm bg-white/80 hover:bg-white transition-all duration-300">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3 font-outfit">{feature.title}</h3>
+          <p class="text-slate-600 font-outfit font-light">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

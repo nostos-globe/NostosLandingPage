@@ -1,0 +1,70 @@
+
+<section class="app-preview section relative overflow-hidden py-20">
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
+  <div class="container relative z-10">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm mb-4" data-aos="fade-down">
+        Preview 📱
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900" data-aos="fade-up">See Nostos in Action</h2>
+    </div>
+    <div class="screens-container overflow-x-auto pb-8" data-aos="fade-up">
+      <div class="flex gap-8 justify-center min-w-max px-4">
+        <!-- Feed Screen -->
+        <div class="screen w-[280px] h-[580px] flex items-center justify-center">
+          <img 
+            src="/profile-screen.png" 
+            alt="Feed Screen" 
+            class="w-full h-full object-cover rounded-[2rem]" 
+            style="object-position: center;"
+          />
+        </div>
+
+        <!-- Explore Screen -->
+        <div class="screen w-[280px] h-[580px] flex items-center justify-center">
+          <img 
+            src="/profile-screen.png" 
+            alt="Explore Screen" 
+            class="w-full h-full object-cover rounded-[2rem]" 
+            style="object-position: center;"
+          />
+        </div>
+
+        <!-- Profile Screen -->
+        <div class="screen w-[280px] h-[580px] flex items-center justify-center">
+          <img 
+            src="/profile-screen.png" 
+            alt="Profile Screen" 
+            class="w-full h-full object-cover rounded-[2rem]" 
+            style="object-position: center;"
+          />
+        </div>
+      </div>
+    </div>
+
+<style>
+  .screen {
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 1rem;
+
+    backdrop-filter: blur(10px);
+  }
+  .screen:hover {
+    transform: scale(1.05);
+  }
+
+  .screens-container {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .screens-container::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .screens-container {
+      margin: 0 -1rem;
+    }
+  }
+</style>

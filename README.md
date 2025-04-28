@@ -1,79 +1,48 @@
-# Nostos Landing Page
+# Astro Starter Kit: Basics
 
-This repository contains the source code for the **Landing Page** of the app, developed using **Astro** for static site generation and **GSAP** for animations.
-
----
-
-## 📌 Features
-✔ **Fast and Lightweight**: Built with Astro for optimized performance.  
-✔ **Smooth Animations**: Powered by GSAP for engaging user experience.  
-✔ **SEO Optimized**: Best practices implemented for better search engine rankings.  
-✔ **Responsive Design**: Works seamlessly across all devices.  
-✔ **Modular Components**: Reusable and maintainable code structure.  
-
----
-
-## 📂 Project Structure
-```
-📦 landing-page
- ├── 📂 src
- │   ├── 📂 components   # Reusable UI components
- │   ├── 📂 layouts      # Page layouts
- │   ├── 📂 pages        # Website pages
- │   ├── 📂 styles       # Global and component-specific styles
- │   ├── 📂 assets       # Images, icons, and other assets
- ├── 📄 package.json     # Dependencies and scripts
- ├── 📄 astro.config.mjs # Astro configuration
- ├── 📄 README.md        # Project documentation
+```sh
+npm create astro@latest -- --template basics
 ```
 
----
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-## 🛠️ Installation & Setup
-### **1️⃣ Clone the Repository**
-```bash
-git clone https://github.com/your-username/landing-page.git
-cd landing-page
-```
-### **2️⃣ Install Dependencies**
-```bash
-npm install
-```
-### **3️⃣ Start the Development Server**
-```bash
-npm run dev
-```
-The landing page will be available at **http://localhost:3000**.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
----
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-## 🌟 Animations with GSAP
-This project uses **GSAP (GreenSock Animation Platform)** for smooth and engaging animations.
-Animations are defined inside `src/animations/` and applied to components.
+## 🚀 Project Structure
 
-### **Example GSAP Animation in Astro**
-```js
-import gsap from 'gsap';
-import { onMount } from 'astro/runtime';
+Inside of your Astro project, you'll see the following folders and files:
 
-onMount(() => {
-  gsap.from('.hero-text', { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
-});
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
----
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-## 🚀 Deployment
-This landing page can be deployed using **Vercel, Netlify, GitHub Pages, or Cloudflare Pages**.
-### **Deploy on Vercel**
-```bash
-npm install -g vercel
-vercel
-```
+## 🧞 Commands
 
----
+All commands are run from the root of the project, from a terminal:
 
-## 📌 Contributing
-Feel free to contribute by submitting **issues** and **pull requests**!
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
----
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
