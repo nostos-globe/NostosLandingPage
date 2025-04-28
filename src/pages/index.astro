@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import Features from '../components/Features.astro';
@@ -10,6 +11,7 @@ import CallToAction from '../components/CallToAction.astro';
 ---
 
 <Layout title="Nostos - Your Travel Diary Companion">
+  <Navbar />
   <main>
     <HeroSection />
     <Features />
