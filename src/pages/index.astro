@@ -3,6 +3,8 @@ import "../styles/global.css";
 
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
+import AboutUs from '../components/AboutUs.astro';
+import FAQ from '../components/FAQ.astro';
 import HeroSection from '../components/HeroSection.astro';
 import Features from '../components/Features.astro';
 import AppPreview from '../components/AppPreview.astro';
@@ -10,12 +12,15 @@ import CallToAction from '../components/CallToAction.astro';
 
 ---
 
-<Layout title="Nostos - Your Travel Diary Companion">
+<Layout title="Nostos - Preserve Your Memories">
   <Navbar />
   <main>
     <HeroSection />
     <Features />
     <AppPreview />
+    <AboutUs />
+    <FAQ />
     <CallToAction />
+    
   </main>
 </Layout>

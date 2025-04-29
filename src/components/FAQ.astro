@@ -1,0 +1,64 @@
+---
+const faqs = [
+  {
+    question: "What is Nostos?",
+    answer: "Nostos is a digital memory preservation platform that helps you capture, organize, and share your most precious memories with loved ones."
+  },
+  {
+    question: "How secure are my memories?",
+    answer: "We use industry-standard encryption and security measures to ensure your memories are safe and private. Your data is stored in secure cloud servers with regular backups."
+  },
+  {
+    question: "Can I share memories with others?",
+    answer: "Yes! Nostos makes it easy to share memories with family and friends. You can control privacy settings for each memory or collection you create."
+  },
+  {
+    question: "What file types are supported?",
+    answer: "Nostos supports various file types including photos, videos, audio recordings, and text documents. We're constantly adding support for more formats."
+  }
+];
+---
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <h2 class="text-center gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
+    <div class="faq-container mt-8">
+      {faqs.map((faq, index) => (
+        <div class="faq-item" data-aos="fade-up" data-aos-delay={index * 100}>
+          <div class="faq-question">
+            <span>{faq.question}</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all FAQs
+        faqItems.forEach(faq => {
+          faq.classList.remove('active');
+          faq.querySelector('.toggle').textContent = '+';
+        });
+        
+        // Open clicked FAQ if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          item.querySelector('.toggle').textContent = '−';
+        }
+      });
+    });
+  });
+</script>

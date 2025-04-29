@@ -112,7 +112,7 @@ const { title } = Astro.props;
   .feature-card {
     background: white;
     border-radius: var(--theme-radius);
-    padding: 2rem;
+    padding: 1.2rem;
     box-shadow: var(--theme-shadow);
     transition: transform 0.3s ease;
   }
@@ -276,10 +276,57 @@ const { title } = Astro.props;
     font-weight: 700;
   }
 
-  h1 { font-size: 3.5rem; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 2rem; }
-  h4 { font-size: 1.5rem; }
+  /* About Us styles */
+  .about-section {
+    background-color: #f8fafc;
+    padding: 4rem 0;
+  }
+
+  .about-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* FAQ styles */
+  .faq-section {
+    background-color: var(--theme-bg);
+    padding: 4rem 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--theme-border);
+    padding: 1.5rem 0;
+  }
+
+  .faq-question {
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-answer {
+    margin-top: 1rem;
+    color: var(--theme-muted);
+    display: none;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  h1 { font-size: 4.5rem; }
+  h2 { font-size: 3rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1rem; }
 
   @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
