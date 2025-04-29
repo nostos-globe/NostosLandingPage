@@ -108,19 +108,6 @@ const { title } = Astro.props;
     z-index: -1;
   }
 
-  /* Feature card styles */
-  .feature-card {
-    background: white;
-    border-radius: var(--theme-radius);
-    padding: 1.2rem;
-    box-shadow: var(--theme-shadow);
-    transition: transform 0.3s ease;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-0.5rem);
-  }
-
   /* App preview carousel */
   .app-preview {
     background: linear-gradient(to bottom, #f8fafc, #ffffff);
@@ -323,7 +310,7 @@ const { title } = Astro.props;
     display: block;
   }
 
-  h1 { font-size: 4.5rem; }
+  h1 { font-size: 6rem; }
   h2 { font-size: 3rem; }
   h3 { font-size: 1.5rem; }
   h4 { font-size: 1rem; }
@@ -333,6 +320,20 @@ const { title } = Astro.props;
     h2 { font-size: 2rem; }
     h3 { font-size: 1.75rem; }
     h4 { font-size: 1.25rem; }
+  }
+
+  .features-title {
+    font-size: 7rem;
+    line-height: 1.75;
+  }
+
+  .feature-title-section {
+    font-size: 1.35rem;
+    line-height: 1.75; 
+  }
+  .feature-text {
+    font-size: 1rem;
+    line-height: 1.75; 
   }
 
   /* Image Styles */

@@ -44,19 +44,25 @@ const faqs = [
     
     faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
-      question.addEventListener('click', () => {
+      question?.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
         
         // Close all FAQs
         faqItems.forEach(faq => {
           faq.classList.remove('active');
-          faq.querySelector('.toggle').textContent = '+';
+          const toggleElement = faq.querySelector('.toggle');
+          if (toggleElement) {
+            toggleElement.textContent = '+';
+          }
         });
         
         // Open clicked FAQ if it wasn't active
         if (!isActive) {
           item.classList.add('active');
-          item.querySelector('.toggle').textContent = '−';
+          const toggleElement = item.querySelector('.toggle');
+          if (toggleElement) {
+            toggleElement.textContent = '−';
+          }
         }
       });
     });

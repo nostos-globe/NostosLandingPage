@@ -1,0 +1,44 @@
+<div class="fixed inset-0 bg-black flex items-center justify-center">
+  <div class="text-center">
+    <div class="words">
+      <span class="word">EXPLORE</span>
+      <span class="word">CAPTURE</span>
+      <span class="word">SHARE</span>
+      <span class="word">TRAVEL</span>
+      <span class="word">NOSTOS</span>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .words {
+    font-size: 9rem;
+    font-weight: bold;
+    height: 9rem;
+    position: relative;
+  }
+
+  .word {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: cycleWords 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .word:nth-child(2) { animation-delay: 1s; }
+  .word:nth-child(3) { animation-delay: 2s; }
+  .word:nth-child(4) { animation-delay: 3s; }
+  .word:nth-child(5) { animation-delay: 4s; }
+
+  @keyframes cycleWords {
+    0% { opacity: 0; transform: translate(-50%, 30px); }
+    5% { opacity: 1; transform: translate(-50%, 0); }
+    15% { opacity: 1; transform: translate(-50%, 0); }
+    20% { opacity: 0; transform: translate(-50%, -30px); }
+    25% { opacity: 0; transform: translate(-50%, -60px); }
+    100% { opacity: 0; transform: translate(-50%, -30px); }
+  }
+</style>
