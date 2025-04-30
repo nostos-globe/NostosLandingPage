@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 
-import MarqueeText from '../components/MarqueeText.astro';
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import AboutUs from '../components/AboutUs.astro';
@@ -10,56 +9,18 @@ import HeroSection from '../components/HeroSection.astro';
 import Features from '../components/Features.astro';
 import AppPreview from '../components/AppPreview.astro';
 import CallToAction from '../components/CallToAction.astro';
-
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Nostos - Preserve Your Memories">
-  <div id="loading-screen" class="fixed inset-0 z-50 bg-black">
-    <MarqueeText />
-  </div>
-  <nav class="opacity-0">
     <Navbar />
-  </nav>
-  <main class="opacity-0" id="main-content">
-    <HeroSection />
-    <Features />
-    <AppPreview />
-    <AboutUs />
-    <FAQ />
-    <CallToAction />
-  </main>
+    <main>
+        <HeroSection />
+        <Features />
+        <AboutUs />
+        <AppPreview />
+        <FAQ />
+        <CallToAction />
+    </main>
+    <Footer />
 </Layout>
-
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const loadingScreen = document.getElementById('loading-screen');
-      const mainContent = document.getElementById('main-content');
-      const navbar = document.querySelector('nav');
-      
-      if (loadingScreen) {
-        loadingScreen.style.transition = 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)';
-        loadingScreen.style.opacity = '0';
-      }
-      
-      setTimeout(() => {
-        if (navbar) {
-          navbar.style.transition = 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)';
-          navbar.style.opacity = '1';
-          navbar.style.visibility = 'visible';
-        }
-
-        if (mainContent) {
-          mainContent.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
-          mainContent.style.opacity = '1';
-        }
-      }, 500);
-      
-      setTimeout(() => {
-        if (loadingScreen) {
-          loadingScreen.style.display = 'none';
-        }
-      }, 1000);
-    }, 4500);
-  });
-</script>
