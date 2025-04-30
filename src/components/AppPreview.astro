@@ -1,19 +1,21 @@
 
-<section class="app-preview-sections relative overflow-hidden">
+<section id="preview" class="app-preview-sections bg-white-100 relative overflow-hidden">
   <!-- First Section -->
-  <div class="section py-20 relative">
+  <div class="section py-20 relative mt-10">
     <div class="container relative z-10">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="text-content" data-aos="fade-right">
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">A new way to hangout</h2>
-          <p class="text-slate-600">Connect with friends, share your day, and make every moment special with Nostos.</p>
+          <p class="text-slate-600 pr-25">Connect with friends, share your day, and make every moment special with Nostos.
+            Stay close through shared travel trips, collaborative photo albums, and daily updates.
+            With Nostos, your journeys become unforgettable experiences—shared and celebrated.</p>
         </div>
-        <div class="screen-preview" data-aos="fade-left">
-          <div class="screen w-[380px] h-[580px] mx-auto">
+        <div class="screen-preview bg-feature-1 rounded-2xl w-[30rem]" data-aos="fade-left">
+          <div class="screen w-[310px] h-[450px] mx-auto non-padding">
             <img 
               src="/feature1.png" 
               alt="Hangout Screen" 
-              class="w-full h-full object-cover rounded-[2rem]" 
+              class="w-full h-full" 
             />
           </div>
         </div>
@@ -22,11 +24,11 @@
   </div>
 
   <!-- Second Section -->
-  <div class="section py-20 bg-amber-50 relative">
+  <div class="section py-20 relative mt-10">
     <div class="container relative z-10">
       <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="screen-preview bg-red-5 order-2 md:order-1" data-aos="fade-right">
-          <div class="screen w-[380px] h-[650px] mx-auto">
+        <div class="screen-preview bg-feature-2 order-2 md:order-1 rounded-2xl w-[30rem]" data-aos="fade-right">
+          <div class="screen w-[310px] h-[450px] mx-auto non-padding">
             <img 
               src="/feature2.png" 
               alt="Home Screen" 
@@ -35,27 +37,30 @@
           </div>
         </div>
         <div class="text-content order-1 md:order-2" data-aos="fade-left">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Your Home Screen, Now with Friends</h2>
-          <p class="text-slate-600">Share your favorite moments and stay connected with your closest friends.</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Your World in One View</h2>
+          <p class="text-slate-600 pr-25">Visualize your footprint and see how far you've come.
+            Nostos brings your travels to life on a dynamic 3D globe, complete with shared routes, destinations, and stats.
+            Track where you’ve been—and where you're headed next.</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Third Section -->
-  <div class="section py-20 relative">
+  <div class="section py-20 relative mt-10">
     <div class="container relative z-10">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="text-content" data-aos="fade-right">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Personalize your space</h2>
-          <p class="text-slate-600">Make your profile uniquely yours with custom themes and personal touches.</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Discover Hidden Gems</h2>
+          <p class="text-slate-600 pr-25">Explore travel ideas from people you trust.
+            Scroll through albums from real travelers, filter by destination or interest, and find authentic inspiration for your next getaway.</p>
         </div>
-        <div class="screen-preview" data-aos="fade-left">
-          <div class="screen w-[280px] h-[580px] mx-auto">
+        <div class="screen-preview bg-feature-3 rounded-2xl w-[30rem]" data-aos="fade-left">
+          <div class="screen w-[310px] h-[450px] mx-auto non-padding">
             <img 
-              src="/profile-screen.png" 
+              src="/feature2.png" 
               alt="Personalization Screen" 
-              class="w-full h-full object-cover rounded-[2rem]" 
+              class="w-full h-full" 
             />
           </div>
         </div>
@@ -78,7 +83,26 @@
   .section {
     overflow: hidden;
   }
-  
+
+  .non-padding {
+    padding-bottom: 0!important; 
+  }
+
+  .bg-feature-1 {
+    background-image: url('/bg-feature-1.png'); 
+    background-size: cover;
+  }
+
+  .bg-feature-2 {
+    background-image: url('/bg-feature-2.png'); 
+    background-size: cover;
+  }
+
+  .bg-feature-3 {
+    background-image: url('/bg-feature-3.png'); 
+    background-size: cover;
+  }
+
   @media (max-width: 768px) {
     .screen {
       max-width: 100%;
