@@ -6,10 +6,9 @@ WORKDIR /app
 # Copy package files first for better caching
 COPY package.json ./
 COPY package-lock.json* ./
-COPY npm-shrinkwrap.json* ./
 
-# Install dependencies with specific npm version
-RUN npm ci --only=production
+# Install dependencies with legacy peer deps flag
+RUN npm install --legacy-peer-deps
 
 # Copy project files
 COPY . .
