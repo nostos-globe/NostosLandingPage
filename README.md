@@ -1,6 +1,3 @@
-I'll help you create a comprehensive README.md file for your Nostos Landing Page project. Here's a well-structured README that describes your project:
-
-```markdown:c:\Users\Alumno\Desktop\NostosLandingPage\README.md
 # Nostos Landing Page
 
 A modern, responsive landing page for Nostos - a digital memory preservation platform built with Astro and TailwindCSS.
