@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.footer-text{
+    font-size: 19.8rem;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: 8rem;
+    font-family: "Climate Crisis", sans-serif;
+}
