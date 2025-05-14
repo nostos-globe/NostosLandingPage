@@ -39,6 +39,25 @@ const { title } = Astro.props;
         });
       });
     </script>
+    <script>
+      // Language management
+      let currentLang = localStorage.getItem('nostos-lang') || 'en';
+      
+      function updateLanguage(lang: string) {
+        currentLang = lang;
+        localStorage.setItem('nostos-lang', lang);
+        document.documentElement.lang = lang;
+        
+        // Dispatch a custom event for language change
+        window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: lang } }));
+      }
+
+      // Make it globally available
+      window.nostosLanguage = {
+        getCurrentLang: () => currentLang,
+        updateLanguage: updateLanguage
+      };
+    </script>
   </body>
 </html>
 

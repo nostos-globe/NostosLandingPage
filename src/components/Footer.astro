@@ -3,8 +3,26 @@
   <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="space-y-4">
-        <h3 class="text-xl font-bold">Nostos</h3>
-        <p class="text-white">Your personal travel diary, reimagined.</p>
+        <img src="/nostosLogo.png" alt="Logo" class="h-10 mr-2 brightness-0 invert">
+        <p class="text-white">Language</p>
+        <div class="relative w-64">
+          <button id="dropdownButton" class="w-full bg-blue-600/80 text-white text-lg font-medium rounded-2xl px-6 py-4 appearance-none cursor-pointer focus:outline-none shadow-lg hover:bg-blue-600/80 transition-all duration-300 flex justify-between items-center">
+            English
+            <svg class="w-5 h-5 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M7 10l5 5 5-5H7z"/>
+            </svg>
+          </button>
+
+          <ul id="dropdownMenu" class="absolute z-10 mt-2 w-full bg-blue-600/80 text-white text-lg font-medium rounded-3xl shadow-lg hidden max-h-[250px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-thumb]:rounded-full">
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">English</li>
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">Español</li>
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">Français</li>
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">Deutsch</li>
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">Čeština</li>
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">Dansk</li>
+            <li class="px-6 py-4 hover:bg-blue-600/80 cursor-pointer transition-all duration-200">Magyar</li>
+          </ul>
+        </div>
         <div class="flex space-x-4">
           <a href="#" class="text-white hover:text-white transition-colors">
             <i class="fab fa-twitter"></i>
@@ -49,3 +67,71 @@
     <p class="footer-text">NOSTOS</p>
   </div>
 </footer>
+<script>
+  // Type declaration for window.nostosLanguage
+  declare global {
+    interface Window {
+      nostosLanguage: {
+        getCurrentLang: () => string;
+        updateLanguage: (lang: string) => void;
+      }
+    }
+  }
+
+  const button = document.getElementById('dropdownButton');
+  const menu = document.getElementById('dropdownMenu');
+  
+  if (button && menu) {
+    const items = menu.getElementsByTagName('li');
+    
+    // Language mapping
+    const languageMap = {
+      'English': 'en',
+      'Español': 'es',
+      'Français': 'fr',
+      'Deutsch': 'de',
+      'Čeština': 'cs',
+      'Dansk': 'da',
+      'Magyar': 'hu'
+    };
+
+    // Initialize with stored language
+    const currentLang = window.nostosLanguage?.getCurrentLang() || 'en';
+    const displayNames = {
+      'en': 'English',
+      'es': 'Español',
+      'fr': 'Français',
+      'de': 'Deutsch',
+      'cs': 'Čeština',
+      'da': 'Dansk',
+      'hu': 'Magyar'
+    };
+    
+    // Set initial button text
+    const buttonText = button.firstChild;
+    if (buttonText) {
+      buttonText.textContent = displayNames[currentLang] || 'English';
+    }
+
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    Array.from(items).forEach(item => {
+      item.addEventListener('click', () => {
+        const selectedLang = languageMap[item.textContent || ''] || 'en';
+        if (buttonText) {
+          buttonText.textContent = item.textContent;
+        }
+        window.nostosLanguage?.updateLanguage(selectedLang);
+        menu.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        menu.classList.add('hidden');
+      }
+    });
+  }
+</script>
