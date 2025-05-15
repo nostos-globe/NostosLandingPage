@@ -115,7 +115,7 @@ import { t } from '../utils/i18n';
 </style>
 
 <script>
-  function updateTexts(lang) {
+  function updateTexts(lang: string | undefined) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       if (key) {
@@ -128,7 +128,7 @@ import { t } from '../utils/i18n';
 
   // Listen for language changes
   window.addEventListener('languageChange', (event) => {
-    const lang = event.detail.language;
+    const lang = (event as CustomEvent<{language: string}>).detail.language;
     updateTexts(lang);
   });
 
