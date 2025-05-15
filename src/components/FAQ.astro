@@ -71,7 +71,7 @@ const faqs = [
   });
 
   // Add translation update functionality
-  function updateTexts(lang) {
+  function updateTexts(lang: string | undefined) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       if (key) {
