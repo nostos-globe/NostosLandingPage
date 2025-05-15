@@ -1,12 +1,16 @@
 
+---
+import { t } from '../utils/i18n';
+---
+
 <section id="preview" class="app-preview-sections bg-white-100 relative overflow-hidden">
   <!-- First Section -->
   <div class="section py-20 relative mt-10">
     <div class="container relative z-10">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="text-content" data-aos="fade-right">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">A new way to hangout</h2>
-          <p class="text-slate-600 pr-25">Connect with friends, share your day, and make every moment special with Nostos.
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="preview.section1.title">A new way to hangout</h2>
+          <p class="text-slate-600 pr-25" data-i18n="preview.section1.description">Connect with friends, share your day, and make every moment special with Nostos.
             Stay close through shared travel trips, collaborative photo albums, and daily updates.
             With Nostos, your journeys become unforgettable experiences—shared and celebrated.</p>
         </div>
@@ -30,17 +34,17 @@
         <div class="screen-preview bg-feature-2 order-2 md:order-1 rounded-2xl w-[30rem]" data-aos="fade-right">
           <div class="screen w-[310px] h-[450px] mx-auto non-padding">
             <img 
-              src="/feature2.png" 
+              src="/feature3.5678png" 
               alt="Home Screen" 
               class="w-full h-full " 
             />
           </div>
         </div>
         <div class="text-content order-1 md:order-2" data-aos="fade-left">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Your World in One View</h2>
-          <p class="text-slate-600 pr-25">Visualize your footprint and see how far you've come.
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="preview.section2.title">Your World in One View</h2>
+          <p class="text-slate-600 pr-25" data-i18n="preview.section2.description">Visualize your footprint and see how far you've come.
             Nostos brings your travels to life on a dynamic 3D globe, complete with shared routes, destinations, and stats.
-            Track where you’ve been—and where you're headed next.</p>
+            Track where you've been—and where you're headed next.</p>
         </div>
       </div>
     </div>
@@ -51,8 +55,8 @@
     <div class="container relative z-10">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="text-content" data-aos="fade-right">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Discover Hidden Gems</h2>
-          <p class="text-slate-600 pr-25">Explore travel ideas from people you trust.
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="preview.section3.title">Discover Hidden Gems</h2>
+          <p class="text-slate-600 pr-25" data-i18n="preview.section3.description">Explore travel ideas from people you trust.
             Scroll through albums from real travelers, filter by destination or interest, and find authentic inspiration for your next getaway.</p>
         </div>
         <div class="screen-preview bg-feature-3 rounded-2xl w-[30rem]" data-aos="fade-left">
@@ -109,3 +113,28 @@
     }
   }
 </style>
+
+<script>
+  function updateTexts(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (key) {
+        import('../utils/i18n').then(({ t }) => {
+          element.textContent = t(key, lang);
+        });
+      }
+    });
+  }
+
+  // Listen for language changes
+  window.addEventListener('languageChange', (event) => {
+    const lang = event.detail.language;
+    updateTexts(lang);
+  });
+
+  // Initial update
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = window.nostosLanguage?.getCurrentLang() || 'en';
+    updateTexts(currentLang);
+  });
+</script>

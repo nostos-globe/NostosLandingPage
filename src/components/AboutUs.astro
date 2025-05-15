@@ -1,14 +1,15 @@
 ---
+import { t } from '../utils/i18n';
 ---
 <section class="about-section" id="about">
   <div class="container">
     <div class="about-grid">
       <div class="about-content" data-aos="fade-right">
-        <h2 class="gradient-text">About Nostos</h2>
-        <p class="text-lg mt-4">
+        <h2 class="gradient-text" data-i18n="about.title">About Nostos</h2>
+        <p class="text-lg mt-4" data-i18n="about.description1">
           Nostos is more than just an app - it's your personal time capsule. We're dedicated to helping people preserve and share their most precious memories in meaningful ways.
         </p>
-        <p class="mt-4">
+        <p class="mt-4" data-i18n="about.description2">
           Our team of passionate developers and designers work tirelessly to create an intuitive and beautiful experience for our users, making memory preservation accessible to everyone.
         </p>
       </div>
@@ -22,3 +23,30 @@
     </div>
   </div>
 </section>
+
+<script>
+  function updateTexts(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (key) {
+        import('../utils/i18n').then(({ t }) => {
+          element.textContent = t(key, lang);
+        });
+      }
+    });
+  }
+
+  // Listen for language changes
+  window.addEventListener('languageChange', (event) => {
+    if (event.detail && event.detail.language) {
+      updateTexts(event.detail.language);
+    }
+  });
+
+  // Initial update
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.nostosLanguage) {
+      updateTexts(window.nostosLanguage.getCurrentLang());
+    }
+  });
+</script>

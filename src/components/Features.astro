@@ -24,7 +24,7 @@ const howItWorks = [
   <div class="absolute inset-0 bg-white/5 backdrop-blur-2xl"></div>
   <div class="container relative z-10">
     <div class="text-center mb-16 pt-24">
-      <h2 class="text-3xl md:text-4xl font-bold text-white font-outfit features-title" data-aos="fade-up">How It Works</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-white font-outfit features-title" data-aos="fade-up" data-i18n="features.title">How It Works</h2>
     </div>
     <div class="grid md:grid-cols-12 gap-8 pb-32">
       {howItWorks.map((item, index) => (
@@ -37,10 +37,10 @@ const howItWorks = [
           data-aos-delay={`${index * 100}`}
         >
           <div class="inline-flex items-center justify-center w-15 h-15 rounded-full bg-white/10 text-white text-xl font-semibold mb-6 border border-white/30 shadow-sm">
-            <img src={item.icon} alt={item.title} class="w-6 h-6"/>
+            <img src={item.icon} alt={`Icon for ${item.title}`} class="w-6 h-6"/>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3 font-outfit tracking-wide feature-title-section">{item.title}</h3>
-          <p class="text-white/80 font-outfit text-base leading-relaxed feature-text">{item.description}</p>
+          <h3 class="text-xl font-semibold text-white mb-3 font-outfit tracking-wide feature-title-section" data-i18n={`features.cards.${index}.title`}>{item.title}</h3>
+          <p class="text-white/80 font-outfit text-base leading-relaxed feature-text" data-i18n={`features.cards.${index}.description`}>{item.description}</p>
         </div>
       ))}
     </div>

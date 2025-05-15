@@ -1,4 +1,6 @@
 ---
+import { t } from '../utils/i18n';
+
 const faqs = [
   {
     question: "What is Nostos?",
@@ -21,16 +23,16 @@ const faqs = [
 
 <section class="faq-section" id="faq">
   <div class="container">
-    <h2 class="text-center gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
+    <h2 class="text-center gradient-text" data-aos="fade-up" data-i18n="faq.title">Frequently Asked Questions</h2>
     <div class="faq-container mt-8">
       {faqs.map((faq, index) => (
         <div class="faq-item" data-aos="fade-up" data-aos-delay={index * 100}>
           <div class="faq-question">
-            <span>{faq.question}</span>
+            <span data-i18n={`faq.questions.${index}.question`}>{faq.question}</span>
             <span class="toggle">+</span>
           </div>
           <div class="faq-answer">
-            <p>{faq.answer}</p>
+            <p data-i18n={`faq.questions.${index}.answer`}>{faq.answer}</p>
           </div>
         </div>
       ))}
@@ -66,5 +68,31 @@ const faqs = [
         }
       });
     });
+  });
+
+  // Add translation update functionality
+  function updateTexts(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (key) {
+        import('../utils/i18n').then(({ t }) => {
+          element.textContent = t(key, lang);
+        });
+      }
+    });
+  }
+
+  // Listen for language changes
+  window.addEventListener('languageChange', (event) => {
+    if (event.detail && event.detail.language) {
+      updateTexts(event.detail.language);
+    }
+  });
+
+  // Initial update
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.nostosLanguage) {
+      updateTexts(window.nostosLanguage.getCurrentLang());
+    }
   });
 </script>

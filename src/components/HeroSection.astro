@@ -1,27 +1,31 @@
+---
+import { t } from '../utils/i18n';
+---
+
 <section id="hero" class="hero section relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white"></div>
   <div class="container grid md:grid-cols-2 gap-18 items-center relative z-10 pt-10 pb-30">
     <div class="hero-content relative z-10" data-aos="fade-right" data-aos-delay="100">
       <h1 class="text-4xl md:text-6xl font-bold text-black mb-6">
-        <span class="inline-block animate-flipIn [animation-delay:200ms]">Capture</span>
-        <span class="inline-block animate-flipIn [animation-delay:400ms]">Your</span>
-        <span class="inline-block animate-flipIn [animation-delay:600ms]">Journey</span>
+        <span class="inline-block animate-flipIn [animation-delay:200ms]" data-i18n="hero.capture">Capture</span>
+        <span class="inline-block animate-flipIn [animation-delay:400ms]" data-i18n="hero.your">Your</span>
+        <span class="inline-block animate-flipIn [animation-delay:600ms]" data-i18n="hero.journey">Journey</span>
         <br>
-        <span class="inline-block animate-flipIn [animation-delay:800ms]">with</span>
+        <span class="inline-block animate-flipIn [animation-delay:800ms]" data-i18n="hero.with">with</span>
         <span class="inline-block text-blue-500 animate-flipIn [animation-delay:1000ms]">Nostos</span>
       </h1>
-      <p class="text-xl text-black/80 mb-8" data-aos="fade-up" data-aos-delay="600">
+      <p class="text-xl text-black/80 mb-8" data-aos="fade-up" data-aos-delay="600" data-i18n="hero.subtitle">
         Transform your travels into beautiful digital memories. Your personal travel diary, reimagined.
       </p>
       <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="800">
-        <a href="#" class="store-button group">
+        <a href="#" class="store-button group" aria-label="Download on App Store">
           <div class="rounded-2xl w-48 h-16 flex items-center justify-center transition-all duration-300 hover:scale-105">
-            <img class="text-white group-hover:opacity-80" src="/AppStore.png">
+            <img class="text-white group-hover:opacity-80" src="/AppStore.png" alt="App Store">
           </div>
         </a>
-        <a href="#" class="store-button group">
+        <a href="#" class="store-button group" aria-label="Get it on Play Store">
           <div class="rounded-2xl w-48 h-16 flex items-center justify-center transition-all duration-300 hover:scale-105">
-            <img class="text-white group-hover:opacity-80" src="/PlayStore.png">
+            <img class="text-white group-hover:opacity-80" src="/PlayStore.png" alt="Play Store">
           </div>
         </a>
       </div>
