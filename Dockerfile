@@ -8,7 +8,7 @@ COPY package.json ./
 COPY package-lock.json* ./
 
 # Install dependencies with legacy peer deps flag
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 # Copy project files
 COPY . .
