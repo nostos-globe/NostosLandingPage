@@ -11,7 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "aos": "^2.3.4",
-    "astro": "^7.3.3",
+    "astro": "^7.4.7",
     "gsap": "^3.12.7",
     "sharp": "^0.35.5"
   },
